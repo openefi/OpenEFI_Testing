@@ -2,10 +2,11 @@ FROM ubuntu:latest
 ARG FIRMWARE='firmware.bin'
 ENV FIRMWARE ${FIRMWARE}
 
-RUN dnf install -y \
+RUN apt update
+
+RUN apt install -y \
     wget \
-    libX11 \
-    bash
+    libx11-6
 
 RUN cd /mnt &&\
  wget https://github.com/xpack-dev-tools/qemu-arm-xpack/releases/download/v2.8.0-11/xpack-qemu-arm-2.8.0-11-linux-x64.tar.gz &&\
