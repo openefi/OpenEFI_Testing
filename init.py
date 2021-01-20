@@ -4,13 +4,13 @@ import sys
 from subprocess import run
 
 #cmd="timeout 5s ./start.sh firmware.bin 2>&1 | tee result.txt"
-cmd="exec ./start.sh " + sys.argv[1]
+cmd="exec /mnt/start.sh " + sys.argv[1]
 rgx= '.+(:PASS|:FAIL:)?.+'
 
 run(cmd, shell=True)
 
-data = open('qemu_output.txt', "r+")
-report = open('report.xml', 'a')
+data = open('/mnt/qemu_output.txt', "r+")
+report = open('/mnt/report.xml', 'a')
 lines = data.readlines()
 
 print(lines[20])
