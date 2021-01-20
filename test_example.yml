@@ -38,8 +38,8 @@ jobs:
 
       - name: pull image & run script
         run: |
-          docker pull docker.pkg.github.com/openefi/openefi_testing/openefi_testing:latest
-          docker create --name openefi_testing_container openefi_testing
+          docker images
+          docker create --name openefi_testing_container docker.pkg.github.com/openefi/openefi_testing/openefi_testing
           docker cp ./firmware.bin openefi_testing_container:/mnt/firmware.bin
           docker container start openefi_testing_container
           docker container wait openefi_testing_container
