@@ -15,7 +15,8 @@ RUN cd /mnt &&\
  /mnt/xpack-qemu-arm-2.8.0-11/bin/qemu-system-gnuarmeclipse --version
 
 COPY ./start.sh /mnt/start.sh
-RUN chmod +x /mnt/start.sh
+COPY ./init.py /mnt/init.py
+
 EXPOSE 3333
 ENTRYPOINT [ "/bin/bash", "-c" ,"/mnt/start.sh /mnt/${FIRMWARE}"  ]
 

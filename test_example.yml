@@ -1,0 +1,41 @@
+name: Docker
+
+on:
+  push:
+    # Publish `main` as Docker `latest` image.
+    branches:
+      - main
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+
+env:
+  # TODO: Change variable to your image's name.
+  IMAGE_NAME: openefi_testing
+  PAT: 9c946ef900d15930bbc7424b02bd25aba3777423
+
+jobs:
+  # Run tests.
+
+  test_firmware:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install deps
+        run: |
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sh get-docker.sh
+         
+      - name: Log into registry
+        run: echo "${PAT}" | docker login docker.pkg.github.com -u FDSoftware --password-stdin
+
+      - name: pull image & run script
+        run: |
+          docker pull docker.pkg.github.com/openefi/openefi_testing/openefi_testing:latest
+          docker create --name openefi_testing_container openefi_testing
+          docker cp ./firmware.bin openefi_testing_container:/mnt/firmware.bin
+          docker container start openefi_testing_container
+          docker container logs openefi_testing_container
