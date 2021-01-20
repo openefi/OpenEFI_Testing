@@ -1,10 +1,11 @@
 import subprocess
 import re
+import sys
+from subprocess import run
 
 #cmd="timeout 5s ./start.sh firmware.bin 2>&1 | tee result.txt"
-cmd="exec ./start.sh"
+cmd="exec ./start.sh " + sys.argv[1]
 rgx= '.+(:PASS|:FAIL:)?.+'
-from subprocess import run, PIPE
 
 run(cmd, shell=True)
 

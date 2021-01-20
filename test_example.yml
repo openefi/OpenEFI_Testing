@@ -13,7 +13,7 @@ on:
 env:
   # TODO: Change variable to your image's name.
   IMAGE_NAME: openefi_testing
-  PAT: 9c946ef900d15930bbc7424b02bd25aba3777423
+  PAT: "no tengo que ser tarado y pushear mi pat"
 
 jobs:
   # Run tests.
@@ -28,9 +28,13 @@ jobs:
         run: |
           curl -fsSL https://get.docker.com -o get-docker.sh
           sh get-docker.sh
+          apt install -y nodejs npm
+          npm i -g junit-viewer
          
       - name: Log into registry
-        run: echo "${PAT}" | docker login docker.pkg.github.com -u FDSoftware --password-stdin
+        run: |
+          echo "${PAT}" | docker login docker.pkg.github.com -u FDSoftware --password-stdin
+          docker pull docker.pkg.github.com/openefi/openefi_testing/openefi_testing:latest
 
       - name: pull image & run script
         run: |
@@ -38,4 +42,9 @@ jobs:
           docker create --name openefi_testing_container openefi_testing
           docker cp ./firmware.bin openefi_testing_container:/mnt/firmware.bin
           docker container start openefi_testing_container
-          docker container logs openefi_testing_container
+          docker container wait openefi_testing_container
+          docker cp openefi_testing_container:/mnt/report.xml ./openefi_report.xml
+
+      - name: create html ./openefi_report.xml
+        run: |
+          junit-viewer --results=./openefi_report.xml >> openefi_report.html

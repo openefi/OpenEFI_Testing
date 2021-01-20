@@ -18,7 +18,7 @@ COPY ./start.sh /mnt/start.sh
 COPY ./init.py /mnt/init.py
 
 EXPOSE 3333
-ENTRYPOINT [ "/bin/bash", "-c" ,"/mnt/start.sh /mnt/${FIRMWARE}"  ]
+ENTRYPOINT [ "/bin/bash", "-c" ,"python /mnt/init.py /mnt/${FIRMWARE}"  ]
 
 # sudo docker create -name openefi_testing_container openefi_testing
 # sudo docker cp ./firmware.bin openefi_testing_container:/mnt/firmware.bin
