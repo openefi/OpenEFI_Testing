@@ -6,7 +6,7 @@ RUN apt update
 
 RUN apt install -y \
     wget \
-    libx11-6
+    libx11-6 \
     python3
 
 RUN cd /mnt &&\
