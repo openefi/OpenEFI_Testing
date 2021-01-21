@@ -18,9 +18,9 @@ jobs:
 
       - name: Install deps (testing)
         run: |
-          apt update
-          apt install -y nodejs npm wget python3 libx11-6 zsh
-          npm i -g junit-viewer
+          sudo apt update
+          sudo apt install -y nodejs npm wget python3 libx11-6 zsh
+          sudo npm i -g junit-viewer
           wget https://github.com/xpack-dev-tools/qemu-arm-xpack/releases/download/v2.8.0-11/xpack-qemu-arm-2.8.0-11-linux-x64.tar.gz
           tar xvf ./xpack-qemu-arm-2.8.0-11-linux-x64.tar.gz
           chmod +x ./xpack-qemu-arm-2.8.0-11/bin/qemu-system-gnuarmeclipse
