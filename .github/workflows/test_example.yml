@@ -1,0 +1,55 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+
+jobs:
+  # Run tests.
+
+  test_firmware:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install deps (testing)
+        run: |
+          apt update
+          apt install -y nodejs npm wget python3 libx11-6 zsh
+          npm i -g junit-viewer
+          wget https://github.com/xpack-dev-tools/qemu-arm-xpack/releases/download/v2.8.0-11/xpack-qemu-arm-2.8.0-11-linux-x64.tar.gz
+          tar xvf ./xpack-qemu-arm-2.8.0-11-linux-x64.tar.gz
+          chmod +x ./xpack-qemu-arm-2.8.0-11/bin/qemu-system-gnuarmeclipse
+          ./xpack-qemu-arm-2.8.0-11/bin/qemu-system-gnuarmeclipse --version
+
+      - name: Install deps (building)
+        run: |
+          echo "agarrar la pala"
+
+      - name: Run Tests
+        run: |
+          ./start.sh firmware.bin || true
+          python3 generate_report.py
+      
+      - name: Generate Report (HTML)
+        run: |
+          junit-viewer --results=./report.xml >> openefi_report.html
+      
+      - uses: actions/upload-artifact@v2
+        name: Upload firmware files
+        with:
+          name: test reports
+          path: |
+            openefi_report.html
+            report.xml
+
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.7
+        if: always()
+        with:
+          github_token: ${{ secrets.GH_REPO_TOKEN_PACKAGE }}
+          files: report.xml

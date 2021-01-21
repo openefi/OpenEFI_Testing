@@ -3,17 +3,12 @@ import re
 import sys
 from subprocess import run
 
-#cmd="timeout 5s ./start.sh firmware.bin 2>&1 | tee result.txt"
-cmd="exec /mnt/start.sh " + sys.argv[1]
 rgx= '.+(:PASS|:FAIL:)?.+'
 
-run(cmd, shell=True)
+data = open('qemu_output.txt', "r+")
+report = open('report.xml', 'a')
 
-data = open('/mnt/qemu_output.txt', "r+")
-report = open('/mnt/report.xml', 'a')
 lines = data.readlines()
-
-print(lines[20])
 
 pattern = re.compile(r"^.+(:PASS|:FAIL)")
 
@@ -31,7 +26,7 @@ total_test = len(successs_test) + len(failed_test)
 failures = len(failed_test)
 
 report.write('<?xml version="1.0" encoding="UTF-8"?>')
-report.write("""
+report.write(f"""
 <testsuites 
     disabled="0"
     errors="0" 
