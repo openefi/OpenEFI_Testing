@@ -39,12 +39,12 @@ jobs:
         run: |
           junit-viewer --results=./report.xml >> openefi_report.html
 
-      - uses: IgnusG/jest-report-action@v2.3.3
-        name: Publish Unit Test Results
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.7
         if: always()
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          junit-file: ./report.xml
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: ./report.xml
 
       - uses: actions/upload-artifact@v2
         name: Upload firmware files
