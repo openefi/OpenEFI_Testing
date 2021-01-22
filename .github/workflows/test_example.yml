@@ -39,12 +39,12 @@ jobs:
         run: |
           junit-viewer --results=./report.xml >> openefi_report.html
 
-      - name: Publish Unit Test Results
-        uses: docker://ghcr.io/enricomi/publish-unit-test-result-action:latest
+      - uses: ashley-taylor/junit-report-annotations-action@master
+        name: Publish Unit Test Results
         if: always()
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          files: ./report.xml
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ./report.xml
 
       - uses: actions/upload-artifact@v2
         name: Upload firmware files
