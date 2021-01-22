@@ -39,12 +39,12 @@ jobs:
         run: |
           junit-viewer --results=./report.xml >> openefi_report.html
 
-      - uses: ashley-taylor/junit-report-annotations-action@master
+      - uses: IgnusG/jest-report-action@v2.3.3
         name: Publish Unit Test Results
         if: always()
         with:
           access-token: ${{ secrets.GITHUB_TOKEN }}
-          path: ./report.xml
+          junit-file: ./report.xml
 
       - uses: actions/upload-artifact@v2
         name: Upload firmware files
