@@ -33,7 +33,7 @@ report.write(f"""
     failures="{failures}"
     name="OpenEFI Testing results"
     tests="{total_test}"
-    time=""
+    time="15s"
 > """)
 
 
@@ -43,7 +43,7 @@ if len(failed_test):
         report.write(f""" 
     <testcase name="{test_data[2]}"
 	    assertions="1"
-	    classname=""
+	    classname="{test_data[2]}"
 	    status="{test_data[3]}"
 	    time="1s"
     >
@@ -63,7 +63,7 @@ if len(successs_test):
         report.write(f""" 
     <testcase name="{test_data[2]}"
 	    assertions="1"
-	    classname=""
+	    classname="{test_data[2]}"
 	    status="{test_data[3]}"
 	    time="1s"
     >
