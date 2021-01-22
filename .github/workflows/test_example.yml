@@ -44,7 +44,7 @@ jobs:
         if: always()
         with:
           access-token: ${{ secrets.GITHUB_TOKEN }}
-          junit-file: report.html
+          junit-file: report.xml
 
       - uses: actions/upload-artifact@v2
         name: Upload firmware files
