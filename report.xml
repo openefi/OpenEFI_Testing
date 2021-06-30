@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites 
+    disabled="0"
+    errors="0" 
+    failures="1"
+    name="OpenEFI Testing results"
+    tests="45"
+    time="15s"
+>  
+    <testcase name="test_sinh"
+	    assertions="1"
+	    classname="test_sinh"
+	    status="FAIL"
+	    time="1s"
+    >
+        <failure
+            message=" Expected 1.5201 Was 1.17520118"
+	        type="FULL ASSERT" 
+	    >
+        FAIL:  Expected 1.5201 Was 1.17520118
+        test_sinh on file src/../lib/nano-float/test/test.c , on line 347
+        </failure>
+    </testcase>
+ 
+    <testcase name="test_aeabi_ddiv"
+	    assertions="1"
+	    classname="test_aeabi_ddiv"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_dmul"
+	    assertions="1"
+	    classname="test_aeabi_dmul"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_dadd"
+	    assertions="1"
+	    classname="test_aeabi_dadd"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_dsub"
+	    assertions="1"
+	    classname="test_aeabi_dsub"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_dcmpeq"
+	    assertions="1"
+	    classname="test_aeabi_dcmpeq"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_dcmplt"
+	    assertions="1"
+	    classname="test_aeabi_dcmplt"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_dcmple"
+	    assertions="1"
+	    classname="test_aeabi_dcmple"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_dcmpge"
+	    assertions="1"
+	    classname="test_aeabi_dcmpge"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_dcmpgt"
+	    assertions="1"
+	    classname="test_aeabi_dcmpgt"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_dcmpun"
+	    assertions="1"
+	    classname="test_aeabi_dcmpun"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_fdiv"
+	    assertions="1"
+	    classname="test_aeabi_fdiv"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_fmul"
+	    assertions="1"
+	    classname="test_aeabi_fmul"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_fadd"
+	    assertions="1"
+	    classname="test_aeabi_fadd"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_fsub"
+	    assertions="1"
+	    classname="test_aeabi_fsub"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_d2iz"
+	    assertions="1"
+	    classname="test_aeabi_d2iz"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_aeabi_d2uiz"
+	    assertions="1"
+	    classname="test_aeabi_d2uiz"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_addsf3"
+	    assertions="1"
+	    classname="test_addsf3"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_subsf3"
+	    assertions="1"
+	    classname="test_subsf3"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_mulsf3"
+	    assertions="1"
+	    classname="test_mulsf3"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_divsf3"
+	    assertions="1"
+	    classname="test_divsf3"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_sqrt"
+	    assertions="1"
+	    classname="test_sqrt"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_log"
+	    assertions="1"
+	    classname="test_log"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_exp"
+	    assertions="1"
+	    classname="test_exp"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_log2"
+	    assertions="1"
+	    classname="test_log2"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_log10"
+	    assertions="1"
+	    classname="test_log10"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_pow"
+	    assertions="1"
+	    classname="test_pow"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_ldexp"
+	    assertions="1"
+	    classname="test_ldexp"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_sin"
+	    assertions="1"
+	    classname="test_sin"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_cos"
+	    assertions="1"
+	    classname="test_cos"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_tan"
+	    assertions="1"
+	    classname="test_tan"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_atan2"
+	    assertions="1"
+	    classname="test_atan2"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_atan"
+	    assertions="1"
+	    classname="test_atan"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_asin"
+	    assertions="1"
+	    classname="test_asin"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_acos"
+	    assertions="1"
+	    classname="test_acos"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_cosh"
+	    assertions="1"
+	    classname="test_cosh"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_tanh"
+	    assertions="1"
+	    classname="test_tanh"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_asinh"
+	    assertions="1"
+	    classname="test_asinh"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_acosh"
+	    assertions="1"
+	    classname="test_acosh"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_atanh"
+	    assertions="1"
+	    classname="test_atanh"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_trunc"
+	    assertions="1"
+	    classname="test_trunc"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_floor"
+	    assertions="1"
+	    classname="test_floor"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_ceil"
+	    assertions="1"
+	    classname="test_ceil"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_fmod"
+	    assertions="1"
+	    classname="test_fmod"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+ 
+    <testcase name="test_fabs"
+	    assertions="1"
+	    classname="test_fabs"
+	    status="PASS"
+	    time="1s"
+    >
+    </testcase>
+</testsuites>

@@ -1,11 +1,9 @@
-import subprocess
 import re
 import sys
-from subprocess import run
 
 rgx= '.+(:PASS|:FAIL:)?.+'
 
-data = open('qemu_output.txt', "r+")
+data = open('qemu_output.log', "r+")
 report = open('report.xml', 'a')
 
 lines = data.readlines()

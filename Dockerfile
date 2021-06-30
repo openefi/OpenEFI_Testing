@@ -10,10 +10,10 @@ RUN apt install -y \
     python3
 
 RUN cd /mnt &&\
- wget https://github.com/xpack-dev-tools/qemu-arm-xpack/releases/download/v2.8.0-11/xpack-qemu-arm-2.8.0-11-linux-x64.tar.gz &&\
- tar xvf ./xpack-qemu-arm-2.8.0-11-linux-x64.tar.gz &&\ 
- chmod +x /mnt/xpack-qemu-arm-2.8.0-11/bin/qemu-system-gnuarmeclipse &&\
- /mnt/xpack-qemu-arm-2.8.0-11/bin/qemu-system-gnuarmeclipse --version
+ wget https://github.com/xpack-dev-tools/qemu-arm-xpack/releases/download/v2.8.0-12/xpack-qemu-arm-2.8.0-12-linux-x64.tar.gz &&\
+ tar xvf ./xpack-qemu-arm-2.8.0-12-linux-x64.tar.gz &&\ 
+ chmod +x /mnt/xpack-qemu-arm-2.8.0-12/bin/qemu-system-gnuarmeclipse &&\
+ /mnt/xpack-qemu-arm-2.8.0-12/bin/qemu-system-gnuarmeclipse --version 
 
 COPY ./start.sh /mnt/start.sh
 COPY ./init.py /mnt/init.py
