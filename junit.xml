@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="86" failures="1" time="11.04">
+  <testsuite name="OrdersTable" errors="0" failures="0" skipped="0" timestamp="2021-06-30T23:26:18" time="2.274" tests="7">
+    <testcase classname="OrdersTable renders (no-data) without crashing &amp; matches snapshot" name="OrdersTable renders (no-data) without crashing &amp; matches snapshot" time="0.137">
+    </testcase>
+    <testcase classname="OrdersTable renders (with-data) without crashing &amp; matches snapshot" name="OrdersTable renders (with-data) without crashing &amp; matches snapshot" time="0.15">
+    </testcase>
+    <testcase classname="OrdersTable displays header data" name="OrdersTable displays header data" time="0.137">
+    </testcase>
+    <testcase classname="OrdersTable doesn&apos;t display body data when collapsed" name="OrdersTable doesn&apos;t display body data when collapsed" time="0.038">
+    </testcase>
+    <testcase classname="OrdersTable displays collapsed by default" name="OrdersTable displays collapsed by default" time="0.041">
+    </testcase>
+    <testcase classname="OrdersTable expands panel when clicked and shows table body" name="OrdersTable expands panel when clicked and shows table body" time="0.069">
+    </testcase>
+    <testcase classname="OrdersTable collapses panel when clicked and hides table body" name="OrdersTable collapses panel when clicked and hides table body" time="0.114">
+    </testcase>
+  </testsuite>
+  <testsuite name="InputField" errors="0" failures="1" skipped="0" timestamp="2021-06-30T23:26:18" time="2.482" tests="3">
+    <testcase classname="InputField renders without crashing &amp; matches snapshot" name="InputField renders without crashing &amp; matches snapshot" time="0.18">
+    </testcase>
+    <testcase classname="InputField accepts an input and shows it" name="InputField accepts an input and shows it" time="0.162">
+      <failure>TestingLibraryElementError: Unable to find an accessible element with the role &quot;tex  tbox&quot;
+    </failure>
+    </testcase>
+    <testcase classname="InputField has an error state that shows an icon" name="InputField has an error state that shows an icon" time="0.064">
+    </testcase>
+    </testcase>
+  </testsuite>
+ 
+  <testsuite name="ProductsTable" errors="0" failures="0" skipped="0" timestamp="2021-06-30T23:26:18" time="8.417" tests="2">
+    <testcase classname="ProductsTable renders table (no content) without crashing &amp; matches snapshot" name="ProductsTable renders table (no content) without crashing &amp; matches snapshot" time="0.117">
+    </testcase>
+    <testcase classname="ProductsTable renders table (with content) without crashing &amp; matches snapshot" name="ProductsTable renders table (with content) without crashing &amp; matches snapshot" time="0.548">
+    </testcase>
+  </testsuite>
+</testsuites>
