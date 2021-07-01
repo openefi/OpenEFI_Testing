@@ -4,7 +4,7 @@ import sys
 rgx= '.+(:PASS|:FAIL:)?.+'
 
 data = open('qemu_output.log', "r+")
-report = open('report.xml', 'a')
+report = open('qemu_report.xml', 'a')
 
 lines = data.readlines()
 
@@ -32,7 +32,9 @@ report.write(f"""
     name="OpenEFI Testing results"
     tests="{total_test}"
     time="15s"
-> """)
+> 
+  <testsuite name="openefi" errors="0" failures="0" skipped="0" time="2" tests="0">
+""")
 
 
 if len(failed_test):
@@ -68,5 +70,6 @@ if len(successs_test):
     </testcase>
 """)
 
+report.write('</testsuite>')
 report.write('</testsuites>')
 report.close()
